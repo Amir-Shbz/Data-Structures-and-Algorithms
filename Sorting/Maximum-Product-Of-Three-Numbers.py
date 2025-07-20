@@ -12,7 +12,7 @@ class Solution:
         if neg <= 1:
             return nums[-1] * nums[-2] * nums[-3]
         else:
-            x = max((-1)*nums[0], nums[-2])
-            y = max((-1)*nums[1], nums[-3])
+            x = nums[-1] * nums[0] * nums[1]
+            y = nums[-1] * nums[-2] * nums[-3]
 
-            return x * y * nums[-1]
+            return max(x,y)
