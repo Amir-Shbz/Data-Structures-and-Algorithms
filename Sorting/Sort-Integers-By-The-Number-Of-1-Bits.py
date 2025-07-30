@@ -8,18 +8,29 @@
 
 class Solution:    
     def sortByBits(self, arr: list[int]) -> list[int]:
-        x = []
-        for i in arr:
-            cnt = 0
-            if i == 0:
-                x.append((i,0))
-            else:
-                while True:
-                    if i//2 == 0:
-                        break
-                    elif i % 2 == 1:
-                        cnt += 1
-                x.append((i,cnt))
+        # x = []
+        # for i in arr:
+        #     cnt = 0
+        #     if i == 0:
+        #         x.append((i,0))
+        #         continue
+        #     j = i
+        #     while j//2 != 0:
+        #         if j % 2 == 1:
+        #             cnt += 1  
+        #             j = j//2          
+        #     x.append((i,cnt))
+                
+        # y = sorted(x, key=lambda y:(y[1], y[0]))
 
-        return sorted(x, key=lambda y:(y[1], y[0]))
+        # return [i[0] for i in y]
+
+        arr.sort()
+        tmp = []
+        for i in range(len(arr)):
+            tmp.append((arr[i],arr[i].bit_count()))
+
+        sorted_arr = sorted(tmp, key=lambda x: x[1])
+
+        return [i[0] for i in sorted_arr]
  
