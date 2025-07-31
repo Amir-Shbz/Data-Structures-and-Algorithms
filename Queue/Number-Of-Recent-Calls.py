@@ -10,8 +10,17 @@
 # Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
 # It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
 
+import collections
+
 class RecentCounter:
 
     def __init__(self):
+        self.bucket = collections.deque()
 
     def ping(self, t: int) -> int:
+        while self.bucket and self.bucket[0] < t-3000:
+            self.bucket.popleft()
+
+        self.bucket.append(t)
+
+        return len(self.bucket)  
