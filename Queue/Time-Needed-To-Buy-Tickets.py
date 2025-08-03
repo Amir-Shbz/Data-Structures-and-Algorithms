@@ -12,6 +12,36 @@
 
 # Return the time taken for the person initially at position k (0-indexed) to finish buying tickets.
 
+import collections
+
 class Solution:
     def timeRequiredToBuy(self, tickets: list[int], k: int) -> int:
-                  
+        # l = (tickets[k]-1)*(len(tickets)) + (k+1)
+
+        # q = collections.deque()
+
+        # for i in tickets:
+        #     q.append(i)
+
+        # cnt = 0
+        # i = 0
+        # while i<l:
+        #     a = q.popleft()
+        #     if a < 1:
+        #         q.append(0)
+        #     else:
+        #         q.append(a-1)  
+        #         cnt += 1   
+        #     i += 1    
+
+        # return cnt  
+
+        total = 0
+
+        for i, x in enumerate(tickets):
+            if i <= k:
+                total += min(tickets[i], tickets[k])
+            else:
+                total += min(tickets[i], tickets[k] - 1)
+
+        return total
