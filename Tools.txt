@@ -1,0 +1,8 @@
+1: Mathematics
+2: Array
+3: Two Pointers
+4: Stack
+5: Queue (Deque)
+6: Monotonic Stack
+7: Hash Tables
+8: Sorting
