@@ -6,3 +6,7 @@
 6: Monotonic Stack
 7: Hash Tables
 8: Sorting
+9: Singly Linked List
+10: Doubly Linked List
+11: Circular Linked List
+12: 
