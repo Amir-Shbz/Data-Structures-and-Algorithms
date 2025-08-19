@@ -9,3 +9,28 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    #     if head is None:
+    #         return None
+
+    #     res = Solution().reverseList(head.next)
+    #     x = ListNode(head.val)
+
+    #     if res:
+    #         itr = res
+    #         while itr.next:
+    #             itr = itr.next
+    #         itr.next = x
+    #         return res
+    #     else:
+    #         return x
+
+        if head is None or head.next is None:
+            return head
+
+        res = Solution().reverseList(head.next)
+        
+        head.next.next = head
+        head.next = None
+
+        return res
+                

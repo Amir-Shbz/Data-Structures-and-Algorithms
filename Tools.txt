@@ -9,4 +9,5 @@
 9: Singly Linked List
 10: Doubly Linked List
 11: Circular Linked List
-12: 
+12: Hash Set (Set in Python)
+13: Hash Map (Dictionary in Python)
